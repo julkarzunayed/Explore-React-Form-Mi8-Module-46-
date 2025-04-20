@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 
 const ControlledField = () => {
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('')
     const [error, steError] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(event.target.name.value);
-        if(password.length < 6){
-            alert("6 character password is required")
-           
-        }
+        // console.log(event.target.name.value);
+        console.log(password, name);
+        // if(password.length < 6){
+        //     alert("6 character password is required")
+
+        // }
         // else{
         //     steError("")
         // }
     };
+    const handleOnchangeName = e => {
+        setName(e.target.value);
+    }
 
     const handlePasswordOnChange = event => {
         setPassword(event.target.value);
-        console.log(event.target.value)
+        // console.log(event.target.value)
 
-        if(password.length < 6){
+        if (password.length < 6) {
             steError("Password must be more than 6 characters")
         }
-        else{
+        else {
             steError("")
         }
     }
@@ -32,20 +37,28 @@ const ControlledField = () => {
         <div>
             <h3>Controlled Field Form</h3>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="name" defaultValue={'Name'} id="1" placeholder='Your Name' required />
+                <input
+                    onChange={handleOnchangeName}
+                    type="text"
+                    name="name"
+                    defaultValue={name}
+                    id="1"
+                    placeholder='Your Name'
+                    required />
                 <br />
                 <input
                     onChange={handlePasswordOnChange}
                     type="password"
-                    name="password"
                     defaultValue={password}
-                    id="2" placeholder='Your Email'
+                    name="password"
+                    id="2"
+                    placeholder='Password'
                     required />
                 <br />
                 <input type="submit" value="Submit" />
             </form>
             <p>
-                <small style={{color: "red"}}>
+                <small style={{ color: "red" }}>
                     {error}
                 </small>
             </p>
