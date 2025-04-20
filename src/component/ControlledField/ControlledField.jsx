@@ -31,7 +31,7 @@ const ControlledField = () => {
     return (
         <div>
             <h3>Controlled Field Form</h3>
-            <form action="" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input type="text" name="name" defaultValue={'Name'} id="1" placeholder='Your Name' required />
                 <br />
                 <input
