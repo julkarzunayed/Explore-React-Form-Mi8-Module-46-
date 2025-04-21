@@ -1,0 +1,10 @@
+.family-tree div{
+    border: solid 2px tomato;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.flex {
+    display: flex;
+}

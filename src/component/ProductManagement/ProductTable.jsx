@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductTable = ({products}) => {
+const ProductTable = ({ products }) => {
 
     // const {name, price, quantity} = products;
 
@@ -9,11 +9,13 @@ const ProductTable = ({products}) => {
             <h4>Table of the products</h4>
             <table>
                 <thead>
-                    <th>No.</th>
-                    <th>Product Name:</th>
-                    <th>product Price: </th>
-                    <th>Products Quantity</th>
-                    <th>Details</th>
+                    <tr>
+                        <th>No.</th>
+                        <th>Product Name:</th>
+                        <th>product Price: </th>
+                        <th>Products Quantity</th>
+                        <th>Details</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {
@@ -23,7 +25,7 @@ const ProductTable = ({products}) => {
                             <td>{product.price}</td>
                             <td>{product.quantity}</td>
                             <td>details</td>
-                        </tr> )
+                        </tr>)
                     }
                 </tbody>
             </table>
